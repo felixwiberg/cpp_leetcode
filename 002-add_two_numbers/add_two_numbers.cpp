@@ -46,10 +46,11 @@ class Solution {
                 carry = tmp_sum/10;
                 val_to_next = tmp_sum%10;
                 cur->val = val_to_next;
-                cur->next = new ListNode(0);
-                cur = cur->next;
+                if(!(c1 == NULL & c2 == NULL & carry == 0)){
+                    cur->next = new ListNode(0);
+                    cur = cur->next;
+                }
             }
-            cur = NULL;
             return ret;
         }
 };
