@@ -32,7 +32,7 @@ class Solution {
             ListNode *c1 = l1;
             ListNode *c2 = l2;
             
-            while(c1 != NULL || c1 != NULL || carry > 0){
+            while(c1 != NULL || c2 != NULL || carry > 0){
                 tmp_sum = 0;
                 if(c1 != NULL){
                     tmp_sum += c1->val;
@@ -65,13 +65,13 @@ void printllist(ListNode* l){
 }
 
 int main(){
-    ListNode *l1 = new ListNode(1);
-    l1->next = new ListNode(1);
-    l1->next->next = new ListNode(5);
+    ListNode *l1 = new ListNode(0);
+    //l1->next = new ListNode(1);
+    //l1->next->next = new ListNode(5);
 
-    ListNode *l2 = new ListNode(1);
-    l2->next = new ListNode(1);
-    l2->next->next = new ListNode(5);
+    ListNode *l2 = new ListNode(7);
+    l2->next = new ListNode(3);
+    //l2->next->next = new ListNode(5);
 
     Solution s;
     printllist(l1);
