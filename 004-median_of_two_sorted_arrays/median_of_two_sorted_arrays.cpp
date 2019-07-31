@@ -22,7 +22,6 @@ class Solution{
                     merged[k++] = nums2[j++];
                 }
             }
-
             while(i<len1){
                 merged[k++] = nums1[i++];
             }
