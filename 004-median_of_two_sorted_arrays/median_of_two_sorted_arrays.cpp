@@ -16,7 +16,7 @@ class Solution{
                 k = 0;
             vector<int> merged(len1+len2, 0);
             while(i < len1 & j < len2){
-                if(nums1[i] > nums2[j]){
+                if(nums1[i] < nums2[j]){
                     merged[k++] = nums1[i++];
                 }else{
                     merged[k++] = nums2[j++];
@@ -26,8 +26,11 @@ class Solution{
                 merged[k++] = nums1[i++];
             }
             while(j<len2){
-                merged[k++] = nums1[j++];
+                merged[k++] = nums2[j++];
             }
+
+
+            copy(merged.begin(), merged.end(), ostream_iterator<int>(cout,","));
 
             if((len1 + len2) % 2 == 0){
                 return (merged[(len1 + len2)/2-1] + merged[(len1 + len2)/2])/2.0;
@@ -38,8 +41,8 @@ class Solution{
 };
 
 int main(){
-    vector<int> nums1 = {10, 11, 7, 8};
-    vector<int> nums2 = {9};
+    vector<int> nums1 = {1,3};
+    vector<int> nums2 = {2,3,3,4};
     Solution s;
     double ret = s.findMedianSortedArrays(nums1, nums2);
     cout << "the median of ";
