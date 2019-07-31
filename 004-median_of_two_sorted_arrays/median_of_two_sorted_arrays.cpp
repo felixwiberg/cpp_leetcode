@@ -28,10 +28,6 @@ class Solution{
             while(j<len2){
                 merged[k++] = nums2[j++];
             }
-
-
-            copy(merged.begin(), merged.end(), ostream_iterator<int>(cout,","));
-
             if((len1 + len2) % 2 == 0){
                 return (merged[(len1 + len2)/2-1] + merged[(len1 + len2)/2])/2.0;
             }else{
