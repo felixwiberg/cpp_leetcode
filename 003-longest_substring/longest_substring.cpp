@@ -6,9 +6,6 @@ class Solution{
     public:
         int lengthOfLongestSubstring(string s){
             
-            if(s.length() == 1){return 1;}
-            if(s.length() == 2 && s[0] != s[1]){return 2;}
-
             vector<int> ascii(128, 0);
             int tmp_sum = 0, longest_substring = 0;
 
