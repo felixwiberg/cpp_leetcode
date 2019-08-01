@@ -22,16 +22,18 @@ class Solution{
             for(int i = 1; i<(len-1)*2; i++){
                 c = 0;
                 if(i%2==0){
-                    c++;
                     m = 1;
                 }else{
                     m = 0;
                 }
+                
                 for(int j = 1+m; i+j<=(len-1)*2 & i-j>=0; j+=2){
+                    printf("s[i/2]: %c, s[(i-j)/2]: %c, s[(i+j)/2]: %c\n", s[i/2], s[(i-j)/2], s[(i+j)/2]);
                     if(s[(i-j)/2] == s[(i+j)/2]){
                         c++;
                         start = (i-j)/2;
                         end = (i+j)/2;
+                        printf("start: %d, end: %d\n", start,end);
                     }else{
                         break;
                     }
@@ -49,7 +51,7 @@ class Solution{
 
 int main(){
     Solution s;
-    string str = "aabbaa";
+    string str = "asdcbbcd";
     cout << "string: \'" << str << "\'" << endl;
     string ret = s.longestPalindrome(str);
     cout << "returned: \'" << ret << "\'" << endl;
