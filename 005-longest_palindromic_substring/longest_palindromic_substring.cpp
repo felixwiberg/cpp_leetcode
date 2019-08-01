@@ -7,11 +7,10 @@ class Solution{
     public:
         string longestPalindrome(string s){
             int len = s.size(),
-                c = 0,
                 m = 0,
-                longest = 0,
                 start = 0,
                 end = 0,
+                longest = 0,
                 retstart = 0,
                 retend = 0;
 
@@ -20,7 +19,6 @@ class Solution{
             }
 
             for(int i = 1; i<(len-1)*2; i++){
-                c = 0;
                 if(i%2==0){
                     m = 1;
                 }else{
@@ -30,7 +28,6 @@ class Solution{
                 for(int j = 1+m; i+j<=(len-1)*2 & i-j>=0; j+=2){
                     printf("s[i/2]: %c, s[(i-j)/2]: %c, s[(i+j)/2]: %c\n", s[i/2], s[(i-j)/2], s[(i+j)/2]);
                     if(s[(i-j)/2] == s[(i+j)/2]){
-                        c++;
                         start = (i-j)/2;
                         end = (i+j)/2;
                         printf("start: %d, end: %d\n", start,end);
@@ -39,8 +36,8 @@ class Solution{
                     }
                 }
 
-                if(c > longest){
-                    longest = c;
+                if(end-start > longest){
+                    longest = end-start;
                     retstart = start;
                     retend = end;
                 }
@@ -51,7 +48,7 @@ class Solution{
 
 int main(){
     Solution s;
-    string str = "asdcbbcd";
+    string str = "abbbj";
     cout << "string: \'" << str << "\'" << endl;
     string ret = s.longestPalindrome(str);
     cout << "returned: \'" << ret << "\'" << endl;
