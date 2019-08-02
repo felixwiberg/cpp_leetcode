@@ -7,6 +7,10 @@ using namespace std;
 class Solution{
     public:
         string convert(string s, int numRows){
+            if(numRows == 1){
+                return s;
+            }
+            
             int len = s.size();
             int dir = -1;
             int row = 0;
