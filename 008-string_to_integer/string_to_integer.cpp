@@ -7,8 +7,8 @@ class Solution{
     public:
         int myAtoi(string str){
             bool neg = false;
-            unsigned int ret = 0;
-            unsigned int last = 0;
+            unsigned long long ret = 0;
+            unsigned long long last = 0;
             auto start = str.begin();
             while(start != str.end() && isspace(*start)){
                 start++;
@@ -30,6 +30,7 @@ class Solution{
                 ret *= 10; 
                 ret += *start - '0';
                 start++;
+                cout << ret << endl;
                 if(ret >= 2147483647){
                     return neg == true ? -2147483648:2147483647;
                 }
