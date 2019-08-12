@@ -7,8 +7,8 @@ class Solution{
     public:
         int myAtoi(string str){
             bool neg = false;
-            int ret = 0;
-            int last = 0;
+            unsigned int ret = 0;
+            unsigned int last = 0;
             auto start = str.begin();
             while(start != str.end() && isspace(*start)){
                 start++;
