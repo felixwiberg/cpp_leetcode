@@ -8,7 +8,6 @@ class Solution{
         int myAtoi(string str){
             bool neg = false;
             unsigned long long ret = 0;
-            unsigned long long last = 0;
             auto start = str.begin();
             while(start != str.end() && isspace(*start)){
                 start++;
@@ -26,13 +25,15 @@ class Solution{
                 if(!(48<=(int)*start && (int)*start <= 57)){
                     return neg == true ? -1*ret : ret;
                 }
-                last = ret;
                 ret *= 10; 
                 ret += *start - '0';
                 start++;
                 cout << ret << endl;
-                if(ret >= 2147483647){
-                    return neg == true ? -2147483648:2147483647;
+                if(!neg && ret >= 2147483647){
+                    return 2147483647;
+                }
+                if(neg && ret >= 2147483648){
+                    return -2147483648;
                 }
             }
             return neg == true ? -1*ret : ret;
