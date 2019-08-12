@@ -42,7 +42,8 @@ class Solution{
 
 int main(){
     Solution s;
-    string str = " -1";
+    string str = "2147483648";
+    //string str = " -1";
     //string str = "991283472332";
     //string str = "    -142 hej";
     int ret = s.myAtoi(str);
