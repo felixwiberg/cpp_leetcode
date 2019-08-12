@@ -12,23 +12,22 @@ class Solution{
             while(start != str.end() && isspace(*start)){
                 start++;
             }
-            if((int)*start == 45 || (int)*start == 43){
-                if((int)*start == 45){
+            if(*start == 45 || *start == 43){
+                if(*start == 45){
                     neg = true;
                 }
                 start++;
             }
-            if(!(48<=(int)*start && (int)*start <= 57)){
+            if(!(48<=*start && *start <= 57)){
                 return 0;
             }
             while(start != str.end()){
-                if(!(48<=(int)*start && (int)*start <= 57)){
+                if(!(48<=*start && *start <= 57)){
                     return neg == true ? -1*ret : ret;
                 }
                 ret *= 10; 
                 ret += *start - '0';
                 start++;
-                cout << ret << endl;
                 if(!neg && ret >= 2147483647){
                     return 2147483647;
                 }
@@ -42,7 +41,7 @@ class Solution{
 
 int main(){
     Solution s;
-    string str = "-2147483647";
+    string str = "  -2147483647 hejjjj";
     //string str = " -1";
     //string str = "991283472332";
     //string str = "-91283472332";
