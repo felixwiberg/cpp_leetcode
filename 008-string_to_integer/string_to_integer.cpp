@@ -17,6 +17,9 @@ class Solution{
                 start++;
                 neg = true;
             }
+            if((int)*start == 43){
+                start++;
+            }
             if(!(48<=(int)*start && (int)*start <= 57)){
                 return 0;
             }
