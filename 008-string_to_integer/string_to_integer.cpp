@@ -9,31 +9,19 @@ class Solution{
             bool neg = false;
             unsigned long long ret = 0;
             auto start = str.begin();
-            while(start != str.end() && isspace(*start)){
-                start++;
-            }
+            while(start != str.end() && isspace(*start)){start++;}
             if(*start == 45 || *start == 43){
-                if(*start == 45){
-                    neg = true;
-                }
+                if(*start == 45){neg = true;}
                 start++;
             }
-            if(!(48<=*start && *start <= 57)){
-                return 0;
-            }
+            if(!(48<=*start && *start <= 57)){return 0;}
             while(start != str.end()){
-                if(!(48<=*start && *start <= 57)){
-                    return neg == true ? -1*ret : ret;
-                }
+                if(!(48<=*start && *start <= 57)){return neg == true ? -1*ret : ret;}
                 ret *= 10; 
                 ret += *start - '0';
                 start++;
-                if(!neg && ret >= 2147483647){
-                    return 2147483647;
-                }
-                if(neg && ret >= 2147483648){
-                    return -2147483648;
-                }
+                if(!neg && ret >= 2147483647){return 2147483647;}
+                if(neg && ret >= 2147483648){return -2147483648;}
             }
             return neg == true ? -1*ret : ret;
         }
