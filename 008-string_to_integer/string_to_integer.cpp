@@ -29,11 +29,9 @@ class Solution{
                 last = ret;
                 ret *= 10; 
                 ret += *start - '0';
-                //cout << "start: " << *start << endl;
-                //cout << "ret: " << ret << endl;
                 start++;
-                if(ret / 10 != last){
-                    return neg == false ? 2147483647 : -2147483648;
+                if(ret >= 2147483647){
+                    return neg == true ? -2147483648:2147483647;
                 }
             }
             return neg == true ? -1*ret : ret;
