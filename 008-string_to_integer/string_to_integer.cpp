@@ -13,12 +13,11 @@ class Solution{
             while(start != str.end() && isspace(*start)){
                 start++;
             }
-            if((int)*start == 45){
+            if((int)*start == 45 || (int)*start == 43){
                 start++;
-                neg = true;
-            }
-            if((int)*start == 43){
-                start++;
+                if((int)*start == 45){
+                    neg = true;
+                }
             }
             if(!(48<=(int)*start && (int)*start <= 57)){
                 return 0;
