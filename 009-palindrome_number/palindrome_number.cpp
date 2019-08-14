@@ -14,12 +14,13 @@ class Solution {
                 c /= 10;
                 n++;
             }
-            while(x>10){
-                if(x/(int)pow(10, n-1) - x%10 == 0){
-                    x -= x/(int)pow(10, n-1)*(int)pow(10, n-1);
-                    x /= 10;
-                    n -= 2;
-                }else{
+            int array[n];
+            for(int i = n-1; i>=0; i--){
+                array[i] = x%10;
+                x /= 10;
+            }
+            for(int i = 0; i<n/2; i++){
+                if(!(array[i] == array[n-i-1])){
                     return false;
                 }
             }
@@ -29,7 +30,7 @@ class Solution {
 
 int main(){
     Solution s;
-    int x = 99;
+    int x = 11011;
     bool ret = s.isPalindrome(x);
     cout << "palindrome? : " << ret << endl;
     return 0;
