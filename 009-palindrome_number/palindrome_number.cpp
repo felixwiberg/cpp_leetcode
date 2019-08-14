@@ -8,7 +8,7 @@ class Solution {
         bool isPalindrome(int x){
             if(x<0){return false;}
             int z = x;
-            int y = 0;
+            unsigned int y = 0;
             while(x){
                 y = y*10 + x%10;
                 x /= 10;
@@ -19,7 +19,7 @@ class Solution {
 
 int main(){
     Solution s;
-    int x = 2147483647;
+    int x = 2147447412;
     bool ret = s.isPalindrome(x);
     cout << "palindrome? : " << ret << endl;
     return 0;
