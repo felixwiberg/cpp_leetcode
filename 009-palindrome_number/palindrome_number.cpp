@@ -21,6 +21,6 @@ int main(){
     Solution s;
     int x = 2147447412;
     bool ret = s.isPalindrome(x);
-    cout << "palindrome? : " << ret == 1?"yes":"no" << endl;
+    cout << "palindrome? : " << ret << endl;
     return 0;
 }
