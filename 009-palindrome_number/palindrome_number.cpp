@@ -6,6 +6,7 @@ using namespace std;
 class Solution {
     public:
         bool isPalindrome(int x){
+            if(x<0){return false;}
             int z = x;
             int y = 0;
             while(x){
@@ -18,7 +19,7 @@ class Solution {
 
 int main(){
     Solution s;
-    int x = 1;
+    int x = 2147483647;
     bool ret = s.isPalindrome(x);
     cout << "palindrome? : " << ret << endl;
     return 0;
